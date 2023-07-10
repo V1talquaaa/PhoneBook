@@ -1,0 +1,24 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+.contactList {
+display: flex;
+align-items: center;
+padding: 15px;
+width: 300px;
+height: 20px;
+justify-content: space-between;
+
+}
+
+.deleteBtn {
+    margin-top: 0;
+   margin-left: 5px;
+   align-items: center;
+   
+}
+
+.deleteBtn:is(:hover, :focus) {
+    background-color: red;
+  }
