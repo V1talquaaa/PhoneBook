@@ -1,0 +1,25 @@
+.navWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #fff;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.home,
+.register,
+.login {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+.register {
+    margin-right: 10px;
+}
+
+.home:hover,
+.register:hover,
+.login:hover {
+    color: #8deba1;
+}

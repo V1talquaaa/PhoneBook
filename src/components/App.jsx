@@ -1,19 +1,23 @@
 
-import { Form } from './Form/Form';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
 import Container from 'ui/Container';
+import { Navigation } from './Navigation/Navigation';
+import { Route, Routes } from 'react-router-dom';
+import { Register } from '../screens/Register/Register';
+import { Login } from '../screens/Login/Login';
+import { Phonebook } from '../screens/Phonebook/Phonebook';
 
 export const App = () => {
 
   
   return (
       <Container>
-      <h2>Phonebook</h2>
-      <Form />
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList/>
+      <Navigation />
+      <Routes>
+        <Route path='/' element={<Phonebook />} />
+        <Route path='/register' element={<Register />}/>
+        <Route path='/login' element={<Login />} />
+      </Routes>
+
       </Container>
     
   );
