@@ -3,8 +3,12 @@ import { useState } from 'react';
 import './Form.module.css'
 import { useAddContactMutation, useGetContactsQuery } from 'redux/contacts/contactApi';
 import Notiflix from 'notiflix';
+import { useGetCurrentUserQuery } from 'redux/auth';
 
 const Form = () => {
+
+  const isAuthorized = useGetCurrentUserQuery();
+
 
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
@@ -22,12 +26,18 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const contactName = contacts.map(contact => contact.name.toLowerCase());
-    if (contactName.includes(name.toLowerCase())) {
+    console.log(contacts)
+    console.log(isAuthorized)
+    const contactName = contacts && contacts.map(contact => contact.name.toLowerCase());
+    if (contactName && contactName.includes(name.toLowerCase())) {
       return Notiflix.Notify.failure('This contact already exist');
     }
     try {
-      addContact({name:name, number:number})
+      console.log(name)
+      console.log(number)
+      addContact({"name":name, "number":number})
+      console.log(contacts)
+      console.log()
     } catch (error) {
       Notiflix.Notify.failure('Please reload the page')
     }
