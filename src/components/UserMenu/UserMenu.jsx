@@ -17,7 +17,7 @@ const handleLogOut = ()=> {
 
     return(
         <div className={css.userMenu}>
-            <p className={css.userMenuEmail}>{data.name}</p>
+            <p className={css.userMenuEmail}></p>
             <button className={css.userMenuBtn} onClick={handleLogOut}>Log Out</button>
         </div>
     )
