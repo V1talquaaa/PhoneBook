@@ -11,10 +11,13 @@ const authReducer = createSlice({
     reducers: {
         setToken: (state, {payload}) => {
              state.token = payload;   
-        }
+        },
+        logOut: (state) => {
+            state.token = null;   
+       },
     },
 
 });
 
-export const {setToken} = authReducer.actions;
+export const {setToken, logOut} = authReducer.actions;
 export default authReducer.reducer;

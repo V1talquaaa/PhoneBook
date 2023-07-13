@@ -6,9 +6,8 @@ export const authApi = createApi({
     baseUrl: 'https://connections-api.herokuapp.com',
     prepareHeaders: (headers, {getState}) => {
         const token = getState().auth.token;
-        console.log(token)
         if (token) {
-            headers.set("Authorization", `Bearer ${token}`)
+          headers.set("Authorization", `Bearer ${token}`)
         }
         return headers
     }
@@ -29,10 +28,8 @@ export const authApi = createApi({
         }),
       }),
      getCurrentUser: builder.query({
-        query: (token) => ({
-          url: '/users/current',
-          method: 'GET',
-          body: token
+        query: () => ({
+          url: '/users/current'
         })
      })
   }),

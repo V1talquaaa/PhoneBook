@@ -1,8 +1,24 @@
+import { useDispatch } from 'react-redux';
+import css from './UserMenu.module.css'
+import { useNavigate } from 'react-router-dom';
+import { logOut } from 'redux/auth/slice';
+import { useGetCurrentUserQuery } from 'redux/auth';
 const UserMenu = () => {
+    const {data: user} = useGetCurrentUserQuery();
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+
+const handleLogOut = ()=> {
+    dispatch(logOut());
+    navigate('/login')
+}
+
     return(
-        <div>
-            <p>name</p>
-            <button>Log Out</button>
+        <div className={css.userMenu}>
+            <p className={css.userMenuEmail}>{user.name}</p>
+            <button className={css.userMenuBtn} onClick={handleLogOut}>Log Out</button>
         </div>
     )
 }

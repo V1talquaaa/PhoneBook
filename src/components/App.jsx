@@ -5,12 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import { Register } from '../screens/Register/Register';
 import { Login } from '../screens/Login/Login';
 import { Phonebook } from '../screens/Phonebook/Phonebook';
-import { useGetCurrentUserQuery } from 'redux/auth';
 
 export const App = () => {
-  const {data: isAuthorized} = useGetCurrentUserQuery();
-  console.log(isAuthorized);
-  
+
   return (
       <Container>
       <Navigation />
