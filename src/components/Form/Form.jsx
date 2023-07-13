@@ -7,14 +7,11 @@ import { useGetCurrentUserQuery } from 'redux/auth';
 
 const Form = () => {
 
-  const isAuthorized = useGetCurrentUserQuery();
-
-
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
   const [addContact] = useAddContactMutation();
   const {data: contacts} = useGetContactsQuery();
-
+  const { data: isCurrentUser } = useGetCurrentUserQuery();
 
  const onChange = ({target: {name, value}}) => {
     if(name === 'name') {
@@ -26,18 +23,14 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(contacts)
-    console.log(isAuthorized)
     const contactName = contacts && contacts.map(contact => contact.name.toLowerCase());
     if (contactName && contactName.includes(name.toLowerCase())) {
       return Notiflix.Notify.failure('This contact already exist');
     }
     try {
-      console.log(name)
-      console.log(number)
+
       addContact({"name":name, "number":number})
-      console.log(contacts)
-      console.log()
+
     } catch (error) {
       Notiflix.Notify.failure('Please reload the page')
     }
