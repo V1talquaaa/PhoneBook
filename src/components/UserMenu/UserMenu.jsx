@@ -2,9 +2,9 @@ import { useDispatch } from 'react-redux';
 import css from './UserMenu.module.css'
 import { useNavigate } from 'react-router-dom';
 import { logOut } from 'redux/auth/slice';
-import { useGetCurrentUserQuery } from 'redux/auth';
+// import { useGetCurrentUserQuery } from 'redux/auth';
 const UserMenu = () => {
-    const {data} = useGetCurrentUserQuery();
+    // const {data} = useGetCurrentUserQuery();
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
