@@ -1,7 +1,7 @@
-const UserMenu = ({name}) => {
+const UserMenu = () => {
     return(
         <div>
-            <p>{name}</p>
+            <p>name</p>
             <button>Log Out</button>
         </div>
     )
