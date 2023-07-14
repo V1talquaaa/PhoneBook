@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './Form.module.css'
 import { useAddContactMutation, useGetContactsQuery } from 'redux/contacts/contactApi';
 import Notiflix from 'notiflix';
-import { useGetCurrentUserQuery } from 'redux/auth';
+
 
 const Form = () => {
 
@@ -11,7 +11,7 @@ const Form = () => {
   const [number, setNumber] = useState('')
   const [addContact] = useAddContactMutation();
   const {data: contacts} = useGetContactsQuery();
-  const { data: isCurrentUser } = useGetCurrentUserQuery();
+ 
 
  const onChange = ({target: {name, value}}) => {
     if(name === 'name') {
