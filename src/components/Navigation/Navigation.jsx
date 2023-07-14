@@ -9,8 +9,10 @@ const Navigation = () => {
 
     return (
         <div className={css.navWrap}>
+            <div>
             <NavLink to='/' className={css.home}>Home</NavLink>
             {isAuthorized ? <NavLink to='/contacts' className={css.contacts}>Contacts</NavLink> : ''}
+            </div>
             {isAuthorized ? 
             <UserMenu email={isAuthorized.email}/> :
             <div>

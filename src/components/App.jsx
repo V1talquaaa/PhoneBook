@@ -5,24 +5,22 @@ import { Route, Routes } from 'react-router-dom';
 import { Register } from '../screens/Register/Register';
 import { Login } from '../screens/Login/Login';
 import { Contacts } from '../screens/Contacts/Contacts';
-// import { useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { useGetCurrentUserQuery } from 'redux/auth';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useGetCurrentUserQuery } from 'redux/auth';
 import { Home } from 'screens/Home/Home';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
 export const App = () => {
 
-  // const isToken = useSelector(state => state.auth.token)
-  // const { data: isCurrentUser } = useGetCurrentUserQuery();
+  const isToken = useSelector(state => state.auth.token)
+  const { data: isCurrentUser } = useGetCurrentUserQuery();
 
-  // useEffect(() => {
-  // if(isToken) {
-    
-  // }
+  useEffect(() => {
+    console.log(isCurrentUser);
  
-  // }, [])
+  }, [])
   
   return (
       <Container>

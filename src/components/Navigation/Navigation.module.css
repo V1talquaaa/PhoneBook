@@ -9,7 +9,8 @@
 
 .home,
 .register,
-.login {
+.login,
+.contacts {
     color: #fff;
     text-decoration: none;
     font-size: 24px;
@@ -20,6 +21,11 @@
 
 .home:hover,
 .register:hover,
-.login:hover {
+.login:hover,
+.contacts:hover {
     color: #8deba1;
+}
+
+.contacts {
+    margin-left: 20px;
 }

@@ -5,9 +5,8 @@ import { ContactList } from "components/ContactList/ContactList"
 const Contacts = () => {
     return (
         <>
-        <h2>Phonebook</h2>
-        <Form />
         <h2>Contacts</h2>
+        <Form />
         <Filter />
         <ContactList/>
         </>
