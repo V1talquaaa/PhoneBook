@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useLoginMutation } from "redux/auth"
 import { useDispatch } from "react-redux"
 import { setToken } from "redux/auth/slice"
+import Notiflix from "notiflix"
 
 
 const Login = () => {
@@ -26,7 +27,9 @@ const Login = () => {
        if (data) {
         dispatch(setToken(data.token))
         navigate("/")
-       } 
+       } else if (!data) {
+        Notiflix.Notify.failure('Please check your email or password')
+    }
     }
 
     return (
