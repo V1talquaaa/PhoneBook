@@ -18,7 +18,9 @@ export const App = () => {
   const { data: isCurrentUser } = useGetCurrentUserQuery();
 
   useEffect(() => {
+  if(isToken) {
     console.log(isCurrentUser);
+  }
  
   }, [])
   
