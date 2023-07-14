@@ -15,14 +15,15 @@ import { PublicRoute } from './PublicRoute';
 export const App = () => {
 
   const isToken = useSelector(state => state.auth.token)
-  const { data: isCurrentUser } = useGetCurrentUserQuery();
+  const data  = useGetCurrentUserQuery();
 
   useEffect(() => {
   if(isToken) {
-    console.log(isCurrentUser);
+    console.log(data);
+    console.log(isToken);
   }
  
-  }, [])
+  }, [data, isToken])
   
   return (
       <Container>

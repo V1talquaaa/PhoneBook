@@ -27,18 +27,19 @@ export const authApi = createApi({
           body: credential
         }),
       }),
+      logOut: builder.mutation({
+        query: () =>({
+          url: `/users/logout`,
+          method: 'POST',
+        }),
+      }),
      getCurrentUser: builder.query({
         query: () => ({
           url: '/users/current'
   
         }),
      }),
-     logOut: builder.mutation({
-      query: () =>({
-        url: `/users/logout`,
-        method: 'POST',
-      }),
-    }),
+
   }),
 })
 
