@@ -27,17 +27,6 @@ const Login = () => {
         dispatch(setToken(data.token))
         navigate("/")
        } 
-    //    if(!data) {
-    //         Notiflix.Notify.failure('Please check your password or email')
-    //    }
-        reset();
-    }
-
-    const reset = () => {
-        setState({
-            email: "",
-            password: "",
-        })
     }
 
     return (
@@ -45,7 +34,7 @@ const Login = () => {
             <input type="email" name="email" placeholder="email" onChange={handleChange}></input>
             <input type="password" name="password" placeholder="password" onChange={handleChange}></input>
             <button type="submit">Log In</button>
-            <p>Yous still not registered account? Click <NavLink to='/register' className={css.linkToRegister} >registration</NavLink></p>
+            <p>Yous are not registered? Click <NavLink to='/register' className={css.linkToRegister} >registration</NavLink></p>
         </form>
     )
 }

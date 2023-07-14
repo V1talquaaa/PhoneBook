@@ -2,7 +2,7 @@ import { Form } from "components/Form/Form"
 import { Filter } from "components/Filter/Filter"
 import { ContactList } from "components/ContactList/ContactList"
 
-const Phonebook = () => {
+const Contacts = () => {
     return (
         <>
         <h2>Phonebook</h2>
@@ -14,4 +14,4 @@ const Phonebook = () => {
     )
 }
 
-export {Phonebook}
+export {Contacts}

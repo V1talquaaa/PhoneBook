@@ -4,31 +4,45 @@ import { Navigation } from './Navigation/Navigation';
 import { Route, Routes } from 'react-router-dom';
 import { Register } from '../screens/Register/Register';
 import { Login } from '../screens/Login/Login';
-import { Phonebook } from '../screens/Phonebook/Phonebook';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { useGetCurrentUserQuery } from 'redux/auth';
+import { Contacts } from '../screens/Contacts/Contacts';
+// import { useSelector } from 'react-redux';
+// import { useEffect } from 'react';
+// import { useGetCurrentUserQuery } from 'redux/auth';
+import { Home } from 'screens/Home/Home';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 export const App = () => {
 
-  const isToken = useSelector(state => state.auth.token)
-  const { data: isCurrentUser } = useGetCurrentUserQuery();
+  // const isToken = useSelector(state => state.auth.token)
+  // const { data: isCurrentUser } = useGetCurrentUserQuery();
 
-  useEffect(() => {
-  if(isToken) {
+  // useEffect(() => {
+  // if(isToken) {
     
-  }
+  // }
  
-  }, [])
+  // }, [])
   
-
   return (
       <Container>
       <Navigation />
       <Routes>
-        {isCurrentUser? <Route path='/' element={<Phonebook />} /> : null}
+
+        <Route element={<PublicRoute />}>
+        <Route path='/' element={<Home />} />
+        </Route>
+       
+
+        <Route element={<PrivateRoute redirectTo="/login"/>}>
+          <Route path='/contacts' element={<Contacts />} /> 
+        </Route>
+        
+        <Route element={<PublicRoute redirectTo="/" restricted/>}>
         <Route path='/register' element={<Register />}/>
         <Route path='/login' element={<Login />} />
+        </Route>
+
       </Routes>
 
       </Container>
