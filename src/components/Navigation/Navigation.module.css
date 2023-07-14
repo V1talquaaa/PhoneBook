@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #fff;
+    border-bottom: 1px solid #fff;
     margin-bottom: 20px;
     padding-bottom: 15px;
 }
@@ -23,7 +23,7 @@
 .register:hover,
 .login:hover,
 .contacts:hover {
-    color: #8deba1;
+    color: #988eee;
 }
 
 .contacts {

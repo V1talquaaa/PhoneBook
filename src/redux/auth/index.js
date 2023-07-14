@@ -8,7 +8,7 @@ export const authApi = createApi({
         const token = getState().auth.token;
         if (token) {
           headers.set("Authorization", `Bearer ${token}`)
-        }
+        }  
         return headers
     }
 }),
@@ -19,6 +19,7 @@ export const authApi = createApi({
         method: 'POST',
         body: credential
       }),
+
     }),
     register: builder.mutation({
         query: (credential) => ({
@@ -26,17 +27,18 @@ export const authApi = createApi({
           method: 'POST',
           body: credential
         }),
+
       }),
       logOut: builder.mutation({
         query: () =>({
           url: `/users/logout`,
           method: 'POST',
         }),
+
       }),
      getCurrentUser: builder.query({
         query: () => ({
           url: '/users/current'
-  
         }),
      }),
 

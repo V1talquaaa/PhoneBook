@@ -33,7 +33,7 @@ const Login = () => {
         <form className={css.loginForm} onSubmit={handleSubmit}>
             <input type="email" name="email" placeholder="email" onChange={handleChange}></input>
             <input type="password" name="password" placeholder="password" onChange={handleChange}></input>
-            <button type="submit">Log In</button>
+            <button type="submit" className={css.authBtn}>Log In</button>
             <p>Yous are not registered? Click <NavLink to='/register' className={css.linkToRegister} >registration</NavLink></p>
         </form>
     )

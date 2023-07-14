@@ -19,8 +19,7 @@ export const App = () => {
 
   useEffect(() => {
   if(isToken) {
-    console.log(data);
-    console.log(isToken);
+    
   }
  
   }, [data, isToken])
