@@ -36,7 +36,7 @@ const Register = () => {
             <input type="text" name="name" placeholder="name" onChange={handleChange}></input>
             <input type="email" name="email" placeholder="email" onChange={handleChange}></input>
             <input type="password" name="password" placeholder="password" onChange={handleChange}></input>
-            <button type="submit" className={css.authBtn}>Submit</button>
+            <button type="submit" className={css.authBtn} >Submit</button>
             <p>If you already have account, <NavLink to='/login' className={css.linkToLogin}>Log In</NavLink></p>
         </form>
     )
